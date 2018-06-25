@@ -1,11 +1,11 @@
 // Select color input
 // Select size input 
 const canvas = $('#pixelCanvas'); 
-let submit = $('#submit');
+let submitbutton = $('#submit');
 let color = $('#colorPicker');
 
 // When size is submitted by the user, call makeGrid()
-submit.on('click', function(e){
+submitbutton.on('click', function(e){
     e.preventDefault();
     makeGrid();
    });
