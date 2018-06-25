@@ -1,8 +1,8 @@
 // Select color input
 // Select size input 
-const canvas = $('#pixelCanvas'); 
+const pixelcanvas = $('#pixelCanvas'); 
 let submitbutton = $('#submit');
-let color = $('#colorPicker');
+let color = $('#colorPicker'); 
 
 // When size is submitted by the user, call makeGrid()
 submitbutton.on('click', function(e){
@@ -11,24 +11,21 @@ submitbutton.on('click', function(e){
    });
 
 function makeGrid() {
-   canvas.children().remove();
+   pixelcanvas.children().remove();
     var height = document.getElementById("inputHeight").value;
     var width  = document.getElementById("inputWeight").value;
 
    for(var i = 0; i < height; i++){
-     canvas.append('<tr></tr>'); 
+     pixelcanvas.append('<tr></tr>'); 
  }
     var j = 0;
   while(j < width){
       $('tr').append('<td> </td>'); 
       j++;
     }
- var cell = $('td');
- cell.on('click',function(){
+ var gridbox = pixelcanvas.children().find('td');
+ gridbox.on('click',function(){
     this.style.backgroundColor = color.val();
  }) 
 
 }
-
-
-   
